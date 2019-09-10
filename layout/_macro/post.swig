@@ -214,6 +214,41 @@
             </span>
           {% endif %}
 
+           {% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %}
+            <div class="post-wordcount">
+              {% if theme.post_wordcount.wordcount %}
+                {% if not theme.post_wordcount.separated_meta %}
+                  <span class="post-meta-divider">|</span>
+                {% endif %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                {% if theme.post_wordcount.item_text %}
+                  <span class="post-meta-item-text">{{ __('post.wordcount') }}</span>
+                {% endif %}
+                <span title="{{ __('post.wordcount') }}">
+                  {{ wordcount(post.content) }}
+                </span>
+              {% endif %}
+
+              {% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %}
+                <span class="post-meta-divider">|</span>
+              {% endif %}
+
+              {% if theme.post_wordcount.min2read %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                {% if theme.post_wordcount.item_text %}
+                  <span class="post-meta-item-text">{{ __('post.min2read') }}</span>
+                {% endif %}
+                <span title="{{ __('post.min2read') }}">
+                  {{ min2read(post.content) }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+
           {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
             <div class="post-symbolscount">
               {% if not theme.symbols_count_time.separated_meta %}

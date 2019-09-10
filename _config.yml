@@ -331,12 +331,17 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
-symbols_count_time:
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
   separated_meta: true
-  item_text_post: true
-  item_text_total: false
-  awl: 4
-  wpm: 275
+# symbols_count_time:
+#   separated_meta: true
+#   item_text_post: true
+#   item_text_total: false
+#   awl: 4
+#   wpm: 275
 
 codeblock:
   # Manual define the border radius in codeblock, leave it blank for the default value: 1
@@ -829,13 +834,29 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
   total_views_icon: eye
   post_views: true
   post_views_icon: eye
+
+  # busuanzi_count:
+  # # count values only if the other configs are false
+  # enable: true
+  # # custom uv span for the whole site
+  # site_uv: true
+  # site_uv_header: <i class="fa fa-user"></i> 访问人数
+  # site_uv_footer:
+  # # custom pv span for the whole site
+  # site_pv: true
+  # site_pv_header: <i class="fa fa-eye"></i> 总访问量
+  # site_pv_footer: 次
+  # # custom pv span for one page only
+  # page_pv: false
+  # page_pv_header: <i class="fa fa-eye"></i> 浏览
+  # page_pv_footer: 次
 
 # Tencent analytics ID
 #tencent_analytics:
