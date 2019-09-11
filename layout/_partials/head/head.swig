@@ -6,6 +6,21 @@
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
+<script>
+    (function () {
+        if ('{{ page.password }}') {
+            if (prompt('请输入文章密码') !== '{{ page.password }}') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://princevictor.top"); 
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
 <style>
     .pace .pace-progress {
         background: #000000; /*进度条颜色*/
